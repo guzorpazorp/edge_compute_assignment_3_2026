@@ -1,0 +1,6 @@
+model,top1_acc,size_mb,latency_bs1_median_ms,latency_bs1_p95_ms,throughput_img_s,threads
+fp32_resnet18,93.03,44.686,24.6466,35.14,81.5,2
+ptq_int8,92.99,11.3,7.1417,13.6877,138.05,2
+qat_int8,92.99,11.3,6.8137,9.5858,138.9,2
+structured_pruned,93.25,22.711,6.0195,8.5174,166.8,2
+unstructured_pruned,93.32,44.686,12.2575,14.8026,81.53,2

@@ -1,0 +1,6 @@
+model,onnx_file,export_method,size_mb,torch_acc_subset,onnx_acc_subset
+fp32,onnx_models/fp32_resnet18.onnx,torch.onnx.export,44.686,92.8,92.8
+unstructured,onnx_models/unstructured_pruned.onnx,torch.onnx.export,44.686,92.75,92.75
+structured,onnx_models/structured_pruned.onnx,torch.onnx.export,22.711,93.4,93.4
+ptq,onnx_models/ptq_int8.onnx,torch.onnx.export,11.3,92.85,92.75
+qat,onnx_models/qat_int8.onnx,torch.onnx.export,11.3,92.9,92.75

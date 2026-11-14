@@ -1,0 +1,4 @@
+model,question,description,precision,top1_acc,top5_acc,size_mb,gzip_size_mb,params,nonzero_params,weight_sparsity_pct,macs_m,latency_bs1_median_ms,latency_bs1_p95_ms,throughput_img_s,testset_time_s,acc_delta_vs_fp32,agreement_with_fp32_pct,size_reduction_x,gzip_size_reduction_x,latency_speedup_x,throughput_speedup_x,threads
+fp32,Q1+Q2,Baseline ResNet-18 (FP32),FP32,93.03,99.84,44.7714,41.5478,11173962,11173962,0.0,555.4227,20.4821,47.4967,66.2531,150.9364,0.0,100.0,1.0,1.0,1.0,1.0,2
+unstructured,Q2,"Global magnitude pruning (FP32, sparse)",FP32,93.32,99.83,44.7721,12.8025,11173962,2242480,80.0,555.4227,18.8734,23.799,65.3743,152.9653,0.29,96.83,1.0,3.2453,1.0852,0.9867,2
+structured,Q2,Channel-pruned + reconstructed (FP32),FP32,93.25,99.81,22.7856,21.132,5679306,5679306,0.0,281.7444,12.949,15.9978,114.6512,87.2211,0.22,95.63,1.9649,1.9661,1.5818,1.7305,2

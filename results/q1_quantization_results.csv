@@ -1,0 +1,4 @@
+model,question,description,precision,top1_acc,top5_acc,size_mb,gzip_size_mb,params,nonzero_params,weight_sparsity_pct,macs_m,latency_bs1_median_ms,latency_bs1_p95_ms,throughput_img_s,testset_time_s,acc_delta_vs_fp32,agreement_with_fp32_pct,size_reduction_x,gzip_size_reduction_x,latency_speedup_x,throughput_speedup_x,threads
+fp32,Q1+Q2,Baseline ResNet-18 (FP32),FP32,93.03,99.84,44.7714,41.5478,11173962,11173962,0.0,555.4227,20.4821,47.4967,66.2531,150.9364,0.0,100.0,1.0,1.0,1.0,1.0,2
+ptq,Q1,Post-training static quantization (INT8),INT8,93.02,99.84,11.4328,10.1746,11173962,11173962,0.0,555.4227,8.8532,13.5774,110.6378,90.385,-0.01,99.46,3.916,4.0835,2.3135,1.6699,2
+qat,Q1,Quantization-aware training (INT8),INT8,93.0,99.82,11.4326,10.1738,11173962,11173962,0.0,555.4227,8.5415,18.827,111.3343,89.8196,-0.03,98.69,3.9161,4.0838,2.398,1.6804,2

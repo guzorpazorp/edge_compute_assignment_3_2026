@@ -1,0 +1,30 @@
+Self-test passed (ratio=0 reconstruction max |diff| = 0.00e+00)
+
+Inner widths per block:
+  layer1.0    64 ->   32
+  layer1.1    64 ->   32
+  layer2.0   128 ->   64
+  layer2.1   128 ->   64
+  layer3.0   256 ->  128
+  layer3.1   256 ->  128
+  layer4.0   512 ->  256
+  layer4.1   512 ->  256
+
+Params 11,173,962 -> 5,679,306 (50.8%) | MACs 555.4M -> 281.7M | acc right after pruning 22.42%
+epoch=1 | train_loss=0.2159 | train_acc=92.5481 | test_acc=89.1600 | epoch_time_s=15.3385
+epoch=2 | train_loss=0.1596 | train_acc=94.3450 | test_acc=90.2400 | epoch_time_s=14.8846
+epoch=3 | train_loss=0.1290 | train_acc=95.4828 | test_acc=90.1500 | epoch_time_s=14.5388
+epoch=4 | train_loss=0.1043 | train_acc=96.4243 | test_acc=91.1900 | epoch_time_s=14.2922
+epoch=5 | train_loss=0.0859 | train_acc=97.0032 | test_acc=91.3800 | epoch_time_s=14.2551
+epoch=6 | train_loss=0.0610 | train_acc=98.0409 | test_acc=92.3400 | epoch_time_s=14.3288
+epoch=7 | train_loss=0.0408 | train_acc=98.8161 | test_acc=92.7000 | epoch_time_s=14.4511
+epoch=8 | train_loss=0.0312 | train_acc=99.1406 | test_acc=92.8500 | epoch_time_s=14.4385
+epoch=9 | train_loss=0.0250 | train_acc=99.3690 | test_acc=93.2300 | epoch_time_s=14.4049
+epoch=10 | train_loss=0.0231 | train_acc=99.4571 | test_acc=93.2500 | epoch_time_s=14.4224
+
+======= Structured pruning summary =======
+Accuracy : 93.03% -> 22.42% (pruned) -> 93.25% (fine-tuned)
+Params   : 11,173,962 -> 5,679,306
+MACs     : 555.4M -> 281.7M
+File size: 44.77 MB -> 22.79 MB
+Saved -> checkpoints/structured_pruned.pth

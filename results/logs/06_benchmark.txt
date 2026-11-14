@@ -1,0 +1,26 @@
+CPU: x86_64 | threads: 2 | torch 2.6.0+cu124 | quant engine x86
+
+>> fp32: Baseline ResNet-18 (FP32)
+   model=fp32 | precision=FP32 | top1_acc=93.030 | top5_acc=99.840 | size_mb=44.771 | gzip_size_mb=41.548 | params=11173962 | nonzero_params=11173962 | weight_sparsity_pct=0.000 | macs_m=555.423 | latency_bs1_median_ms=20.482 | latency_bs1_p95_ms=47.497 | throughput_img_s=66.253 | testset_time_s=150.936
+
+>> ptq: Post-training static quantization (INT8)
+   model=ptq | precision=INT8 | top1_acc=93.020 | top5_acc=99.840 | size_mb=11.433 | gzip_size_mb=10.175 | params=11173962 | nonzero_params=11173962 | weight_sparsity_pct=0.000 | macs_m=555.423 | latency_bs1_median_ms=8.853 | latency_bs1_p95_ms=13.577 | throughput_img_s=110.638 | testset_time_s=90.385
+
+>> qat: Quantization-aware training (INT8)
+   model=qat | precision=INT8 | top1_acc=93.000 | top5_acc=99.820 | size_mb=11.433 | gzip_size_mb=10.174 | params=11173962 | nonzero_params=11173962 | weight_sparsity_pct=0.000 | macs_m=555.423 | latency_bs1_median_ms=8.541 | latency_bs1_p95_ms=18.827 | throughput_img_s=111.334 | testset_time_s=89.820
+
+>> unstructured: Global magnitude pruning (FP32, sparse)
+   model=unstructured | precision=FP32 | top1_acc=93.320 | top5_acc=99.830 | size_mb=44.772 | gzip_size_mb=12.802 | params=11173962 | nonzero_params=2242480 | weight_sparsity_pct=80.000 | macs_m=555.423 | latency_bs1_median_ms=18.873 | latency_bs1_p95_ms=23.799 | throughput_img_s=65.374 | testset_time_s=152.965
+
+>> structured: Channel-pruned + reconstructed (FP32)
+   model=structured | precision=FP32 | top1_acc=93.250 | top5_acc=99.810 | size_mb=22.786 | gzip_size_mb=21.132 | params=5679306 | nonzero_params=5679306 | weight_sparsity_pct=0.000 | macs_m=281.744 | latency_bs1_median_ms=12.949 | latency_bs1_p95_ms=15.998 | throughput_img_s=114.651 | testset_time_s=87.221
+
+============================== BENCHMARK SUMMARY ==============================
+       model precision  top1_acc  size_mb  weight_sparsity_pct   macs_m  latency_bs1_median_ms  throughput_img_s  acc_delta_vs_fp32  size_reduction_x  latency_speedup_x
+        fp32      FP32     93.03  44.7714                  0.0 555.4227                20.4821           66.2531               0.00            1.0000             1.0000
+         ptq      INT8     93.02  11.4328                  0.0 555.4227                 8.8532          110.6378              -0.01            3.9160             2.3135
+         qat      INT8     93.00  11.4326                  0.0 555.4227                 8.5415          111.3343              -0.03            3.9161             2.3980
+unstructured      FP32     93.32  44.7721                 80.0 555.4227                18.8734           65.3743               0.29            1.0000             1.0852
+  structured      FP32     93.25  22.7856                  0.0 281.7444                12.9490          114.6512               0.22            1.9649             1.5818
+
+CSV files written to results/

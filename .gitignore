@@ -8,3 +8,6 @@ onnx_models/*_prep.onnx
 
 # assignment brief (not a deliverable)
 Assignment 3.pdf
+
+# downloaded Colab outputs archive (contents are committed unpacked)
+a3_outputs.zip

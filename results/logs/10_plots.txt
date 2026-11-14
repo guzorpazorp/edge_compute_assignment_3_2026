@@ -1,0 +1,5 @@
+wrote results/plots/benchmark_overview.png
+wrote results/plots/baseline_training.png
+wrote results/plots/qat_training.png
+wrote results/plots/structured_pruning.png
+wrote results/plots/unstructured_pruning.png

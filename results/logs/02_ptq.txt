@@ -1,0 +1,143 @@
+/usr/local/lib/python3.13/dist-packages/torch/ao/quantization/observer.py:229: UserWarning: Please use quant_min and quant_max to specify the range for observers.                     reduce_range will be deprecated in a future release of PyTorch.
+  warnings.warn(
+Quantization backend: x86
+FP32 test accuracy: 93.03%
+qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.HistogramObserver'>, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PerChannelMinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})
+  calibration batch 1/32  calibration batch 2/32  calibration batch 3/32  calibration batch 4/32  calibration batch 5/32  calibration batch 6/32  calibration batch 7/32  calibration batch 8/32  calibration batch 9/32  calibration batch 10/32  calibration batch 11/32  calibration batch 12/32  calibration batch 13/32  calibration batch 14/32  calibration batch 15/32  calibration batch 16/32  calibration batch 17/32  calibration batch 18/32  calibration batch 19/32  calibration batch 20/32  calibration batch 21/32  calibration batch 22/32  calibration batch 23/32  calibration batch 24/32  calibration batch 25/32  calibration batch 26/32  calibration batch 27/32  calibration batch 28/32  calibration batch 29/32  calibration batch 30/32  calibration batch 31/32  calibration batch 32/32
+Calibrated on 2048 training images in 42.6s
+ResNet18CIFAR(
+  (quant): Quantize(scale=tensor([0.0323]), zero_point=tensor([62]), dtype=torch.quint8)
+  (conv1): QuantizedConvReLU2d(3, 64, kernel_size=(3, 3), stride=(1, 1), scale=0.016520066186785698, zero_point=0, padding=(1, 1))
+  (bn1): Identity()
+  (relu): Identity()
+  (layer1): Sequential(
+    (0): BasicBlock(
+      (conv1): QuantizedConvReLU2d(64, 64, kernel_size=(3, 3), stride=(1, 1), scale=0.013143554329872131, zero_point=0, padding=(1, 1))
+      (bn1): Identity()
+      (relu1): Identity()
+      (conv2): QuantizedConv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), scale=0.04499783739447594, zero_point=71, padding=(1, 1))
+      (bn2): Identity()
+      (shortcut): Sequential()
+      (skip_add): QFunctional(
+        scale=0.05132303014397621, zero_point=62
+        (activation_post_process): Identity()
+      )
+      (relu2): ReLU(inplace=True)
+    )
+    (1): BasicBlock(
+      (conv1): QuantizedConvReLU2d(64, 64, kernel_size=(3, 3), stride=(1, 1), scale=0.013776996172964573, zero_point=0, padding=(1, 1))
+      (bn1): Identity()
+      (relu1): Identity()
+      (conv2): QuantizedConv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), scale=0.028483852744102478, zero_point=68, padding=(1, 1))
+      (bn2): Identity()
+      (shortcut): Sequential()
+      (skip_add): QFunctional(
+        scale=0.04587743058800697, zero_point=44
+        (activation_post_process): Identity()
+      )
+      (relu2): ReLU(inplace=True)
+    )
+  )
+  (layer2): Sequential(
+    (0): BasicBlock(
+      (conv1): QuantizedConvReLU2d(64, 128, kernel_size=(3, 3), stride=(2, 2), scale=0.011927439831197262, zero_point=0, padding=(1, 1))
+      (bn1): Identity()
+      (relu1): Identity()
+      (conv2): QuantizedConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), scale=0.0264617707580328, zero_point=65, padding=(1, 1))
+      (bn2): Identity()
+      (shortcut): Sequential(
+        (0): QuantizedConv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), scale=0.025368070229887962, zero_point=62)
+        (1): Identity()
+      )
+      (skip_add): QFunctional(
+        scale=0.036664895713329315, zero_point=65
+        (activation_post_process): Identity()
+      )
+      (relu2): ReLU(inplace=True)
+    )
+    (1): BasicBlock(
+      (conv1): QuantizedConvReLU2d(128, 128, kernel_size=(3, 3), stride=(1, 1), scale=0.01128626149147749, zero_point=0, padding=(1, 1))
+      (bn1): Identity()
+      (relu1): Identity()
+      (conv2): QuantizedConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), scale=0.028721095994114876, zero_point=61, padding=(1, 1))
+      (bn2): Identity()
+      (shortcut): Sequential()
+      (skip_add): QFunctional(
+        scale=0.03969915956258774, zero_point=46
+        (activation_post_process): Identity()
+      )
+      (relu2): ReLU(inplace=True)
+    )
+  )
+  (layer3): Sequential(
+    (0): BasicBlock(
+      (conv1): QuantizedConvReLU2d(128, 256, kernel_size=(3, 3), stride=(2, 2), scale=0.012645878829061985, zero_point=0, padding=(1, 1))
+      (bn1): Identity()
+      (relu1): Identity()
+      (conv2): QuantizedConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), scale=0.02625366859138012, zero_point=64, padding=(1, 1))
+      (bn2): Identity()
+      (shortcut): Sequential(
+        (0): QuantizedConv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), scale=0.02078545279800892, zero_point=68)
+        (1): Identity()
+      )
+      (skip_add): QFunctional(
+        scale=0.03594014421105385, zero_point=65
+        (activation_post_process): Identity()
+      )
+      (relu2): ReLU(inplace=True)
+    )
+    (1): BasicBlock(
+      (conv1): QuantizedConvReLU2d(256, 256, kernel_size=(3, 3), stride=(1, 1), scale=0.010982483625411987, zero_point=0, padding=(1, 1))
+      (bn1): Identity()
+      (relu1): Identity()
+      (conv2): QuantizedConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), scale=0.030183415859937668, zero_point=58, padding=(1, 1))
+      (bn2): Identity()
+      (shortcut): Sequential()
+      (skip_add): QFunctional(
+        scale=0.04077387601137161, zero_point=45
+        (activation_post_process): Identity()
+      )
+      (relu2): ReLU(inplace=True)
+    )
+  )
+  (layer4): Sequential(
+    (0): BasicBlock(
+      (conv1): QuantizedConvReLU2d(256, 512, kernel_size=(3, 3), stride=(2, 2), scale=0.016587654128670692, zero_point=0, padding=(1, 1))
+      (bn1): Identity()
+      (relu1): Identity()
+      (conv2): QuantizedConv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), scale=0.03295651823282242, zero_point=55, padding=(1, 1))
+      (bn2): Identity()
+      (shortcut): Sequential(
+        (0): QuantizedConv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), scale=0.029206518083810806, zero_point=62)
+        (1): Identity()
+      )
+      (skip_add): QFunctional(
+        scale=0.04861040413379669, zero_point=54
+        (activation_post_process): Identity()
+      )
+      (relu2): ReLU(inplace=True)
+    )
+    (1): BasicBlock(
+      (conv1): QuantizedConvReLU2d(512, 512, kernel_size=(3, 3), stride=(1, 1), scale=0.015717340633273125, zero_point=0, padding=(1, 1))
+      (bn1): Identity()
+      (relu1): Identity()
+      (conv2): QuantizedConv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), scale=0.030962297692894936, zero_point=50, padding=(1, 1))
+      (bn2): Identity()
+      (shortcut): Sequential()
+      (skip_add): QFunctional(
+        scale=0.052238963544368744, zero_point=31
+        (activation_post_process): Identity()
+      )
+      (relu2): ReLU(inplace=True)
+    )
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=1)
+  (fc): QuantizedLinear(in_features=512, out_features=10, scale=0.21947544813156128, zero_point=33, qscheme=torch.per_channel_affine)
+  (dequant): DeQuantize()
+)
+
+=========== PTQ summary ===========
+FP32 accuracy : 93.03%   size 44.77 MB
+INT8 accuracy : 93.02%   size 11.43 MB
+Accuracy drop : 0.01 pp
+Saved -> checkpoints/ptq_int8.pt

@@ -1,0 +1,30 @@
+Baseline FP32: acc 93.03% | sparsity 0.0%
+
+Iteration 1: target 30% -> sparsity 30.00% | acc right after pruning 93.08%
+    fine-tune epoch 1/2: loss 0.0406 train acc 98.69%
+    fine-tune epoch 2/2: loss 0.0259 train acc 99.22%
+iteration=1 | target_sparsity=30.0000 | actual_sparsity=30.0000 | acc_after_prune=93.0800 | acc_after_finetune=92.9700 | time_s=43.4642
+
+Iteration 2: target 50% -> sparsity 50.00% | acc right after pruning 92.65%
+    fine-tune epoch 1/2: loss 0.0425 train acc 98.57%
+    fine-tune epoch 2/2: loss 0.0234 train acc 99.35%
+iteration=2 | target_sparsity=50.0000 | actual_sparsity=50.0000 | acc_after_prune=92.6500 | acc_after_finetune=93.1300 | time_s=41.1287
+
+Iteration 3: target 70% -> sparsity 70.00% | acc right after pruning 91.44%
+    fine-tune epoch 1/2: loss 0.0389 train acc 98.77%
+    fine-tune epoch 2/2: loss 0.0226 train acc 99.41%
+iteration=3 | target_sparsity=70.0000 | actual_sparsity=70.0000 | acc_after_prune=91.4400 | acc_after_finetune=93.1100 | time_s=41.5519
+
+Iteration 4: target 80% -> sparsity 80.00% | acc right after pruning 85.96%
+    fine-tune epoch 1/4: loss 0.0428 train acc 98.76%
+    fine-tune epoch 2/4: loss 0.0313 train acc 99.08%
+    fine-tune epoch 3/4: loss 0.0210 train acc 99.45%
+    fine-tune epoch 4/4: loss 0.0154 train acc 99.69%
+iteration=4 | target_sparsity=80.0000 | actual_sparsity=80.0000 | acc_after_prune=85.9600 | acc_after_finetune=93.3200 | time_s=78.0022
+
+======= Unstructured pruning summary =======
+Accuracy  : 93.03% -> 93.32%
+Sparsity  : 80.00% of Conv/Linear weights are exactly zero
+Non-zero params: 2,242,480 / 11,173,962
+File size : 44.77 MB -> 44.77 MB (dense storage); gzip 41.55 -> 12.80 MB
+Saved -> checkpoints/unstructured_pruned.pth

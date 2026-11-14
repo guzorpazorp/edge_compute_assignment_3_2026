@@ -1,0 +1,14 @@
+{'model': 'fp32_resnet18', 'top1_acc': np.float64(93.03), 'size_mb': 44.686, 'latency_bs1_median_ms': 24.6466, 'latency_bs1_p95_ms': 35.14, 'throughput_img_s': 81.5, 'threads': 2}
+{'model': 'ptq_int8', 'top1_acc': np.float64(92.99), 'size_mb': 11.3, 'latency_bs1_median_ms': 7.1417, 'latency_bs1_p95_ms': 13.6877, 'throughput_img_s': 138.05, 'threads': 2}
+{'model': 'qat_int8', 'top1_acc': np.float64(92.99), 'size_mb': 11.3, 'latency_bs1_median_ms': 6.8137, 'latency_bs1_p95_ms': 9.5858, 'throughput_img_s': 138.9, 'threads': 2}
+{'model': 'structured_pruned', 'top1_acc': np.float64(93.25), 'size_mb': 22.711, 'latency_bs1_median_ms': 6.0195, 'latency_bs1_p95_ms': 8.5174, 'throughput_img_s': 166.8, 'threads': 2}
+{'model': 'unstructured_pruned', 'top1_acc': np.float64(93.32), 'size_mb': 44.686, 'latency_bs1_median_ms': 12.2575, 'latency_bs1_p95_ms': 14.8026, 'throughput_img_s': 81.53, 'threads': 2}
+
+              model  top1_acc  size_mb  latency_bs1_median_ms  latency_bs1_p95_ms  throughput_img_s  threads
+      fp32_resnet18     93.03   44.686                24.6466             35.1400             81.50        2
+           ptq_int8     92.99   11.300                 7.1417             13.6877            138.05        2
+           qat_int8     92.99   11.300                 6.8137              9.5858            138.90        2
+  structured_pruned     93.25   22.711                 6.0195              8.5174            166.80        2
+unstructured_pruned     93.32   44.686                12.2575             14.8026             81.53        2
+
+Saved -> results/onnx_benchmark.csv

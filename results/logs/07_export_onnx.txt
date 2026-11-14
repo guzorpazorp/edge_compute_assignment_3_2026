@@ -1,0 +1,17 @@
+
+>> fp32: PyTorch acc on 2000 test images = 92.80%
+   saved onnx_models/fp32_resnet18.onnx (44.69 MB) | ONNX Runtime acc 92.80% | torch.onnx.export
+
+>> unstructured: PyTorch acc on 2000 test images = 92.75%
+   saved onnx_models/unstructured_pruned.onnx (44.69 MB) | ONNX Runtime acc 92.75% | torch.onnx.export
+
+>> structured: PyTorch acc on 2000 test images = 93.40%
+   saved onnx_models/structured_pruned.onnx (22.71 MB) | ONNX Runtime acc 93.40% | torch.onnx.export
+
+>> ptq: PyTorch acc on 2000 test images = 92.85%
+   saved onnx_models/ptq_int8.onnx (11.30 MB) | ONNX Runtime acc 92.75% | torch.onnx.export
+
+>> qat: PyTorch acc on 2000 test images = 92.90%
+   saved onnx_models/qat_int8.onnx (11.30 MB) | ONNX Runtime acc 92.75% | torch.onnx.export
+
+Manifest -> onnx_models/export_manifest.csv

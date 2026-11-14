@@ -1,0 +1,15 @@
+Loaded: fp32, ptq, qat, unstructured, structured
+
+    # true        fp32          ptq           qat           unstructured  structured   
+---------------------------------------------------------------------------------------
+ 6044 horse       horse         horse         horse         horse         horse        
+ 2890 dog         dog           dog           dog           dog           dog          
+ 9399 horse       horse         horse         horse         horse         horse        
+ 1917 ship        ship          ship          ship          ship          ship         
+ 4919 ship        ship          ship          ship          ship          ship         
+ 1729 ship        ship          ship          ship          ship          ship         
+  429 frog        frog          frog          frog          frog          frog         
+ 7532 automobile  automobile    automobile    automobile    automobile    automobile   
+  337 ship        ship          ship          ship          ship          ship         
+ 8223 ship        ship          ship          ship          ship          ship         
+(* = wrong prediction)
