@@ -1,0 +1,10 @@
+# dataset is downloaded automatically by torchvision
+data/
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+onnx_models/*_prep.onnx
+
+# assignment brief (not a deliverable)
+Assignment 3.pdf
